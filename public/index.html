@@ -362,8 +362,9 @@ This Theme is Created by rute This work is licensed under a Creative Commons Att
             </p>
           </div>
           
-        <form id="registrationFormData" action="" method="POST" accept-charset="utf-8">
-          <div class="w-full mx-auto mb-10 flex flex-wrap">
+        <form id="registrationFormData" action="" method="POST" accept-charset="utf-8" class="flex flex-wrap">
+          
+          <div class="w-full mx-auto mb-10 flex flex-wrap lg:w-1/2 lg:mr-2">
             <h2 class="text-blue-500 w-full text-2xl font-semibold mb-4">Personal Information</h2>
             <div class="mb-4 w-full">
               <label class="block text-gray-700 text-sm font-bold" for="student_name">Student Name:</label>
@@ -393,67 +394,8 @@ This Theme is Created by rute This work is licensed under a Creative Commons Att
               </select>
             </div>
           </div>
-
-          <div class="w-full mx-auto mb-10 flex flex-wrap">
-            <h2 class="text-blue-500 w-full text-2xl font-semibold mb-4">Contact information</h2>
-            <div class="mb-4 w-1/2 pr-1">
-              <label class="block text-gray-700 text-sm font-bold" for="student_mobile">Mobile number:</label>
-              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="student_mobile" type="tel" placeholder="Mobile number" name="Mobile">
-            </div>
-
-            <div class="mb-4 w-1/2 pl-1">
-              <label class="block text-gray-700 text-sm font-bold" for="father_mobile">Father's Mobile number:</label>
-              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="father_mobile" type="tel" placeholder="Father's mobile number" name="Father mobile">
-            </div>
-
-            <div class="mb-4 w-1/2 pr-1">
-              <label class="block text-gray-700 text-sm font-bold" for="blood_group">Blood group:</label>
-              <select class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="blood_group" name="Blood group">
-                <option value="A+">A+</option>
-                <option value="B+">B+</option>
-                <option value="O+">O+</option>
-                <option value="AB+">AB+</option>
-                <option value="A-">A-</option>
-                <option value="B-">B-</option>
-                <option value="O-">O-</option>
-                <option value="AB-">AB-</option>
-              </select>
-            </div>
-
-            <div class="mb-4 w-1/2 pl-1">
-              <label class="block text-gray-700 text-sm font-bold" for="category">Category:</label>
-              <select class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="category" name="Category">
-                <option value="SC">SC</option>
-                <option value="ST">ST</option>
-                <option value="OBC">OBC</option>
-                <option value="General">General</option>
-              </select>
-            </div>
-
-            <div class="mb-4 w-full">
-              <label class="block text-gray-700 text-sm font-bold" for="permanent_add">Permanent Address:</label>
-              <textarea class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500 " id="permanent_add" placeholder="Permanent address"  name="Permanent add"></textarea>
-            </div>
-
-            <div class="mb-4 w-full">
-              <label class="block text-gray-700 text-sm font-bold" for="current_add">Current Address:</label>
-              <textarea class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="current_add" placeholder="Current address"  name="Current add"></textarea>
-            </div>
-
-            <div class="mb-4 w-1/2 pr-1">
-              <label class="block text-gray-700 text-sm font-bold" for="area_pincode">Area pincode:</label>
-              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="area_pincode" type="tel" placeholder="Area pincode"  name="Area pincode">
-            </div>
-
-
-            <div class="mb-4 w-1/2 pl-1">
-              <label class="block text-gray-700 text-sm font-bold" for="aadhaar">Aadhaar Number:</label>
-              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="aadhaar" type="tel" placeholder="XXXX XXXX XXXX"  name="Aadhaar number">
-            </div>
-
-          </div>
-
-          <div class="w-full mx-auto mb-10 flex flex-wrap">
+          
+          <div class="w-full mx-auto mb-10 flex flex-wrap lg:w-1/2 lg:ml-2">
             <h2 class="text-blue-500 w-full text-2xl font-semibold mb-4">Educational information</h2>
             <div class="mb-4 w-full">
               <label class="block text-gray-700 text-sm font-bold" for="qualification">Qualification:</label>
@@ -498,6 +440,67 @@ This Theme is Created by rute This work is licensed under a Creative Commons Att
             </div>
 
           </div>
+
+          <div class="w-full mx-auto mb-10 flex flex-wrap">
+            <h2 class="text-blue-500 w-full text-2xl font-semibold mb-4">Contact information</h2>
+            <div class="mb-4 w-1/2 pr-1">
+              <label class="block text-gray-700 text-sm font-bold" for="student_mobile">Mobile number:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="student_mobile" type="tel" placeholder="Mobile number" name="Mobile">
+            </div>
+
+            <div class="mb-4 w-1/2 pl-1">
+              <label class="block text-gray-700 text-sm font-bold" for="father_mobile">Father's Mobile number:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="father_mobile" type="tel" placeholder="Father's mobile number" name="Father mobile">
+            </div>
+
+            <div class="mb-4 w-1/2 pr-1">
+              <label class="block text-gray-700 text-sm font-bold" for="blood_group">Blood group:</label>
+              <select class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="blood_group" name="Blood group">
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="O+">O+</option>
+                <option value="AB+">AB+</option>
+                <option value="A-">A-</option>
+                <option value="B-">B-</option>
+                <option value="O-">O-</option>
+                <option value="AB-">AB-</option>
+              </select>
+            </div>
+
+            <div class="mb-4 w-1/2 pl-1">
+              <label class="block text-gray-700 text-sm font-bold" for="category">Category:</label>
+              <select class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="category" name="Category">
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                <option value="OBC">OBC</option>
+                <option value="General">General</option>
+              </select>
+            </div>
+
+            <div class="mb-4 w-1/2 pr-1">
+              <label class="block text-gray-700 text-sm font-bold" for="permanent_add">Permanent Address:</label>
+              <textarea class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500 " id="permanent_add" placeholder="Permanent address"  name="Permanent add"></textarea>
+            </div>
+
+            <div class="mb-4 w-1/2 pl-1">
+              <label class="block text-gray-700 text-sm font-bold" for="current_add">Current Address:</label>
+              <textarea class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="current_add" placeholder="Current address"  name="Current add"></textarea>
+            </div>
+
+            <div class="mb-4 w-1/2 pr-1">
+              <label class="block text-gray-700 text-sm font-bold" for="area_pincode">Area pincode:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="area_pincode" type="tel" placeholder="Area pincode"  name="Area pincode">
+            </div>
+
+
+            <div class="mb-4 w-1/2 pl-1">
+              <label class="block text-gray-700 text-sm font-bold" for="aadhaar">Aadhaar Number:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="aadhaar" type="tel" placeholder="XXXX XXXX XXXX"  name="Aadhaar number">
+            </div>
+
+          </div>
+
+          
           
           <div class="w-full mx-auto">
               <button class="flex items-center justify-between w-full px-6 py-3 text-lg tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50" type="submit">
