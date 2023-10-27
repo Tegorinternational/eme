@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register Page</title>
+</head>
+<body>
+  <h1>Register</h1>
+  <form id="registerForm">
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Register</button>
+  </form>
+
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
+
+  <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyDALQzmEymTCsfa-JdJLBx5NjBkNyorGh8",
+      authDomain: "easy-math-education.firebaseapp.com",
+      projectId: "easy-math-education",
+      storageBucket: "easy-math-education.appspot.com",
+      messagingSenderId: "1008284631099",
+      appId: "1:1008284631099:web:c0ee138cef80a90c915c1e",
+      measurementId: "G-D7LR8M1ZBY"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const registerForm = document.getElementById('registerForm');
+
+    registerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+        const user = userCredential.user;
+        
+        // Add user data to Firestore (optional)
+        const db = firebase.firestore();
+        const userRef = db.collection('users').doc(user.uid);
+        await userRef.set({
+          email: user.email,
+        });
+
+        // Redirect to the index page upon successful registration
+        window.location.href = 'index.html';
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+  </script>
+</body>
+</html>

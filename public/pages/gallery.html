@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/main.css">
+</head>
+<body>
+
+  <!-- Firebase scripts -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "your-api-key",
+      authDomain: "your-auth-domain",
+      projectId: "your-project-id",
+      storageBucket: "your-storage-bucket",
+      messagingSenderId: "your-messaging-sender-id",
+      appId: "your-app-id",
+      measurementId: "your-measurement-id"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    // Get a reference to the Firestore database
+    const db = firebase.firestore();
+
+    // Handle form submission
+    const form = document.getElementById('registrationFormData');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Get form values and create a document in Firestore
+      const studentName = document.getElementById('student_name').value;
+      // ... (get other form values)
+      db.collection('registrationForm').add({
+        studentName: studentName,
+        // ... (other form values)
+      })
+        .then(() => {
+          alert('Your form has been registered successfully.');
+          form.reset(); // Clear the form fields after successful submission
+        })
+        .catch((error) => {
+          console.error('Error registering the form:', error);
+          alert('An error occurred while registering your form.');
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Dashboard</title>
+</head>
+<body>
+  <h1>Welcome to Your Dashboard</h1>
+  <p id="userEmail"></p>
+  <button id="logoutBtn">Logout</button>
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+
+  <script>
+    const firebaseConfig = {
+   apiKey: "AIzaSyDALQzmEymTCsfa-JdJLBx5NjBkNyorGh8",
+     authDomain: "easy-math-education.firebaseapp.com",
+     projectId: "easy-math-education",
+     storageBucket: "easy-math-education.appspot.com",
+     messagingSenderId: "1008284631099",
+     appId: "1:1008284631099:web:c0ee138cef80a90c915c1e",
+     measurementId: "G-D7LR8M1ZBY"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    // Check if the user is authenticated
+    firebase.auth().onAuthStateChanged((user) => {
+      const userEmail = document.getElementById('userEmail');
+      const logoutBtn = document.getElementById('logoutBtn');
+
+      if (user) {
+        userEmail.textContent = `Welcome, ${user.email}!`;
+        
+        logoutBtn.addEventListener('click', () => {
+          firebase.auth().signOut().then(() => {
+            // Redirect to the login page upon logout
+            window.location.href = 'login.html';
+          }).catch((error) => {
+            console.error(error.message);
+          });
+        });
+      } else {
+        // User is not signed in, redirect to login page
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+*{
+    scroll-behavior: smooth;
+}
+body {
+    font-size: 15pt;
+}
+
+.anim{
+    transition-duration: 1s;
+}
+
+.anim:hover{
+    transform: scale(1.2);
+    transition-duration: 0.6s;
+}

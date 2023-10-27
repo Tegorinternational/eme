@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Log In</button>
+  </form>
+
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
+
+  <script>
+    const firebaseConfig = {
+apiKey: "AIzaSyDALQzmEymTCsfa-JdJLBx5NjBkNyorGh8",
+authDomain: "easy-math-education.firebaseapp.com",
+  projectId: "easy-math-education",
+  storageBucket: "easy-math-education.appspot.com",
+  messagingSenderId: "1008284631099",
+  appId: "1:1008284631099:web:c0ee138cef80a90c915c1e",
+  measurementId: "G-D7LR8M1ZBY"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const loginForm = document.getElementById('loginForm');
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+        const user = userCredential.user;
+        
+        // Retrieve user data from Firestore (optional)
+        const db = firebase.firestore();
+        const userRef = db.collection('users').doc(user.uid);
+        const userData = await userRef.get();
+        const userDataObj = userData.data();
+
+        // Redirect to the dashboard or profile page upon successful login
+        window.location.href = 'dashboard.html';
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+  </script>
+</body>
+</html>

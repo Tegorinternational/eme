@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Easy Math Education Coaching, your pathway to success! We specialize in
+  SSC, Railway, Vyapam, CGL, MTS, CPO, GD, and LDC. Our dedication to high-quality coaching and flexible schedules ensures your success.(पाताली हनुमान, पुष्प वाटिका के सामने, मुरार)" />
+  <meta name="developer" content="Rurendra Tegor" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Easy Math Education | Competition Coaching Center By - Arjun Sir</title>
+  <link rel="shortcut icon" href="assets/img/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/main.css">
+  <script src="//unpkg.com/alpinejs" defer></script>
+ <style>
+ /* -----------------------------------------------
+
+Html Template Style
+Name:        Rute Edu Default - Html Paid Template
+Version:     1.0.1.V
+Author:      Rurendra Tegor
+Author Url:  https://rurendrategor.web.app/
+Last Update: 20/Oct/2023
+
+This Theme is Created by rute This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International License [https://rurendrategor.web.app/licence] No One Has Been Permission to Sell Or Distribute this template without Our Permission.
+----------------------------------------------- */
+ 
+  #preloader {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #preloader img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      #content {
+        display: none;
+      }
+      
+</style>
+</head>
+
+<body>
+
+<div id="preloader">
+    <img src="assets/img/logo_1.png" alt="loader">
+   </div>
+
+<section class="w-full h-screen fixed" style="background-image: url('assets/img/bg.jpg'); background-size: cover; background-repeat: no-repeat; z-index: -2; opacity: 0.2;">
+  </section>
+  
+  <!-- header -->
+  <nav x-data="{ isOpen: false }" class="relative-white shadow dark:bg-gray-800 dark:text-gray-100">
+    <div class="container px-6 py-4 mx-auto">
+      <div class="lg:flex lg:items-center lg:justify-between">
+        <div class="flex items-center justify-between">
+          <a href="#" class="flex flex-wrap">
+            <img class="w-10 rounded-full my-auto" src="assets/img/logo_1.png" alt="">
+            <span class="text-2xl font-bold ml-5 my-auto">Easy Math Education</span>
+          </a>
+  
+          <!-- Mobile menu button -->
+          <div class="flex lg:hidden">
+            <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+              <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+              </svg>
+  
+              <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
+          <div class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
+            <a href="#registration" class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Student Registration</a>
+            <a href="pages/about.html" class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
+            <a href="#contactus" class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Contact us</a>
+            <a href="pages/about.html" class="px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Team</a>
+          </div>
+  
+          <div class="flex items-center mt-4 lg:mt-0">
+            <button onclick="window.location.href='https://rurendrategor.web.app/', '_blank'" type="button" class="flex items-center focus:outline-none" aria-label="toggle profile dropdown">
+              <div class="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
+                <img src="assets/img/rute.jpg" class="object-cover w-full h-full" alt="avatar">
+              </div>
+  
+              <h3 class="mx-2 text-gray-700 dark:text-gray-200 lg:hidden">Rurendra Tegor <small class="text-blue-500">(Website developer)</small></h3>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- marquee -->
+  <div class="container px-10 pt-5 md:pt-20 text-red-500 dark:bg-gray-900">
+    <marquee behavior="scroll" direction="left">SSC - CGL, MTS, CPO, GD, LDC | Railway - NTPC, GROUP-D, ALP, RPF POLICE | Vyapam - MP POLICE, PATWARI, FOREST GUARD, JAIL POLICE | Contact +91 826-979-5023 <abbr title="Bijoli branch">Arjun Sir</abbr></marquee>
+  </div>
+  
+  <!-- hero -->
+  <header class="dark:bg-gray-900">
+    <div class="container px-6 py-8 md:pt-5 mx-auto">
+        <div class="items-center lg:flex">
+          
+            <div class="w-full lg:w-1/2">
+                <div class="lg:max-w-lg">
+                    <h1 class="text-4xl font-bold text-gray-800 dark:text-white leading-normal lg:text-4xl">Unlock your learning potential with <span class="text-blue-500">EME</span></h1>
+                    
+                    <p class="mt-3 text-gray-600 dark:text-gray-400 text-lg"><span class="text-blue-500 text-lg">Easy Math Education</span> Coaching, your pathway to success! We specialize in <br> <abbr title="course"> SSC, Railway, Vyapam</abbr>, CGL, MTS, CPO, GD, and LDC. Our dedication to high-quality coaching and flexible schedules ensures your success.<span class="text-yellow-600">(पाताली हनुमान, पुष्प वाटिका के सामने, मुरार)</span></p>
+                    
+                    <button class="w-full px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-600 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500" onclick="window.location.href='#registration'" >Enroll Now</button>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
+                <img class=" w-full h-full lg:max-w-3xl rounded" src="assets/img/eme_banner.jpeg" alt="enroll">
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<!-- gallery -->
+<section class="overflow-hidden text-gray-700 dark:bg-gray-900"  id="gallery">
+  <div class="container px-5 py-2 mx-auto lg:pt-24 lg:px-32 py-24">
+    <div class="flex flex-wrap -m-1 md:-m-2">
+      <div class="flex flex-wrap w-1/2">
+        <div class="w-1/2 p-1 md:p-2 overflow-hidden rounded-lg">
+          <img alt="gallery" class="anim block object-cover object-center w-full h-full rounded-lg"
+            src="gallery/1.jpg">
+        </div>
+        <div class="w-1/2 p-1 md:p-2 overflow-hidden rounded-lg">
+          <img alt="gallery" class="anim block object-cover object-center w-full h-full rounded-lg"
+            src="gallery/2.jpeg">
+        </div>
+        <div class="w-full p-1 md:p-2 overflow-hidden rounded-lg">
+          <img alt="gallery" class="anim block object-cover object-center w-full h-full rounded-lg"
+            src="gallery/3.jpeg">
+        </div>
+      </div>
+      <div class="flex flex-wrap w-1/2 overflow-hidden rounded-lg">
+        <div class="w-full p-1 md:p-2">
+          <img alt="gallery" class="anim block object-cover object-center w-full h-full rounded-lg"
+            src="gallery/6.jpg">
+        </div>
+        <div class="w-1/2 p-1 md:p-2 overflow-hidden rounded-lg">
+          <img alt="gallery" class="anim block object-cover object-center w-full h-full rounded-lg"
+            src="gallery/5.jpg">
+        </div>
+        <div class="w-1/2 p-1 md:p-2 overflow-hidden rounded-lg">
+          <img alt="gallery" class="anim block object-cover object-center w-full h-full rounded-lg"
+            src="gallery/4.jpeg">
+        </div>
+      </div>
+      <div class="container mx-auto my-10 text-blue-400">
+        <h1 class="text-center"> <a href="#!" class="uppercase"><u>View more</u></a> </h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- team card -->
+<section class=" dark:bg-gray-900" id="team">
+    <div class="container px-6 py-10 mx-auto">
+        <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Our <span class="text-blue-500">Executive Team</span></h1>
+
+        <p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
+            Our Dynamic Team Takes on the Challenges Ahead!
+        </p>
+
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-2">
+
+            <div style="background-image: url('assets/img/bg.jpg'); background-size: cover; background-repeat: no-repeat; opacity: 1;" class="px-12 py-8 transition-colors duration-300 transform border cursor-none rounded-xl hover:border-blue-600 group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent">
+                <div class="flex flex-row">
+                    <img class="flex-shrink-0 object-cover w-16 h-16 rounded-full mr-5 my-auto ring-2 ring-yellow-500" src="gallery/arjun.jpg" alt="">
+
+                    <div class="my-auto">
+                        <h1 class="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-black my-auto">Arjun Sir</h1>
+
+                        <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-black text-sm my-auto ">CGL & CPO - Qualified</p>
+                    </div>
+                </div>
+
+                <p class="mt-4 text-gray-500 capitalize dark:text-gray-50 group-hover:text-black text-base">Experienced And Professional Graphic & Web Developer At Bhopal</p>
+
+                <div class="flex mt-4 -mx-2">
+                    <a href="#" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white" aria-label="Call">
+                        <svg  class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
+
+                      xmlns="http://www.w3.org/2000/svg">
+
+<path d="M18.9975 20C10.4659 20.0121 3.99088 13.4595 4.00001 5.00251C4.00001 4.45023 4.44773 4 5.00001 4H7.63937C8.13494 4 8.55593 4.36413 8.6287 4.85433C8.80311 6.0292 9.14517 7.17297 9.64448 8.2507L9.74725 8.4725C9.89013 8.78091 9.79328 9.14734 9.51668 9.34487C8.6993 9.92859 8.38692 11.1036 9.0237 12.0204C9.82278 13.1708 10.8301 14.1779 11.9803 14.9766C12.897 15.6132 14.0718 15.3009 14.6555 14.4836C14.8532 14.2069 15.2198 14.11 15.5284 14.2529L15.7492 14.3552C16.827 14.8545 17.9708 15.1966 19.1458 15.371C19.636 15.4437 20 15.8647 20 16.3603V19C20 19.5523 19.5512 20 18.9989 20L18.9975 20Z"></path>
+</svg>
+                    </a>
+
+                    <a href="#" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white" aria-label="Facebook">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.00195 12.002C2.00312 16.9214 5.58036 21.1101 10.439 21.881V14.892H7.90195V12.002H10.442V9.80204C10.3284 8.75958 10.6845 7.72064 11.4136 6.96698C12.1427 6.21332 13.1693 5.82306 14.215 5.90204C14.9655 5.91417 15.7141 5.98101 16.455 6.10205V8.56104H15.191C14.7558 8.50405 14.3183 8.64777 14.0017 8.95171C13.6851 9.25566 13.5237 9.68693 13.563 10.124V12.002H16.334L15.891 14.893H13.563V21.881C18.8174 21.0506 22.502 16.2518 21.9475 10.9611C21.3929 5.67041 16.7932 1.73997 11.4808 2.01722C6.16831 2.29447 2.0028 6.68235 2.00195 12.002Z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div> 
+            
+            <div style="background-image: url('assets/img/bg.jpg'); background-size: cover; background-repeat: no-repeat; opacity: 1;" class="hidden md:block lg:block px-12 py-8 transition-colors duration-300 transform border cursor-none rounded-xl hover:border-blue-600 group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent">
+                <div class="flex flex-row">
+                    <img class="flex-shrink-0 object-cover w-16 h-16 rounded-full mr-5 my-auto ring-2 ring-yellow-500" src="gallery/arjun.jpg" alt="">
+
+                    <div class="my-auto">
+                        <h1 class="text-xl font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-black my-auto">Arjun Sir</h1>
+
+                        <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-black text-sm my-auto ">CGL & CPO - Qualified</p>
+                    </div>
+                </div>
+
+                <p class="mt-4 text-gray-500 capitalize dark:text-gray-50 group-hover:text-black text-base">Experienced And Professional Graphic & Web Developer At Bhopal</p>
+
+                <div class="flex mt-4 -mx-2">
+                    <a href="#" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white" aria-label="Call">
+                        <svg  class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
+
+                      xmlns="http://www.w3.org/2000/svg">
+
+<path d="M18.9975 20C10.4659 20.0121 3.99088 13.4595 4.00001 5.00251C4.00001 4.45023 4.44773 4 5.00001 4H7.63937C8.13494 4 8.55593 4.36413 8.6287 4.85433C8.80311 6.0292 9.14517 7.17297 9.64448 8.2507L9.74725 8.4725C9.89013 8.78091 9.79328 9.14734 9.51668 9.34487C8.6993 9.92859 8.38692 11.1036 9.0237 12.0204C9.82278 13.1708 10.8301 14.1779 11.9803 14.9766C12.897 15.6132 14.0718 15.3009 14.6555 14.4836C14.8532 14.2069 15.2198 14.11 15.5284 14.2529L15.7492 14.3552C16.827 14.8545 17.9708 15.1966 19.1458 15.371C19.636 15.4437 20 15.8647 20 16.3603V19C20 19.5523 19.5512 20 18.9989 20L18.9975 20Z"></path>
+</svg>
+                    </a>
+
+                    <a href="#" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white" aria-label="Facebook">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.00195 12.002C2.00312 16.9214 5.58036 21.1101 10.439 21.881V14.892H7.90195V12.002H10.442V9.80204C10.3284 8.75958 10.6845 7.72064 11.4136 6.96698C12.1427 6.21332 13.1693 5.82306 14.215 5.90204C14.9655 5.91417 15.7141 5.98101 16.455 6.10205V8.56104H15.191C14.7558 8.50405 14.3183 8.64777 14.0017 8.95171C13.6851 9.25566 13.5237 9.68693 13.563 10.124V12.002H16.334L15.891 14.893H13.563V21.881C18.8174 21.0506 22.502 16.2518 21.9475 10.9611C21.3929 5.67041 16.7932 1.73997 11.4808 2.01722C6.16831 2.29447 2.0028 6.68235 2.00195 12.002Z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Achievement -->
+<section class=" dark:bg-gray-900" id="team">
+    <div class="container px-6 py-10 mx-auto">
+        <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Our <span class="text-blue-500">Achivement</span></h1>
+
+        <p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
+            "From Struggling to Thriving: The Inspiring Story of a Student's Academic Triumph"
+        </p>
+
+        <div class="w-full mx-auto">
+          <img class="w-full rounded-lg p-2 bg-gray-300/60" src="assets/img/Achievement.jpeg" alt="">
+        </div>
+    </div>
+</section>
+
+
+
+<!-- contact -->
+<section class="dark:bg-gray-900" id="contactus">
+  
+    <div class="container grid gap-8 px-6 py-12 mx-auto lg:grid-cols-3">
+      <div class="w-full">
+        <p class="font-medium text-blue-500 dark:text-blue-400">Contact us</p>
+    
+        <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">We’d love to hear from you</h1>
+    
+        <p class="mt-3 text-gray-500 dark:text-gray-400">Our friendly team is always here to chat.</p>
+    </div>
+        <div class="grid grid-cols-1 gap-12 lg:col-span-2 sm:grid-cols-2 ">
+            <div class="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
+                <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                    </svg>
+                </span>
+
+                <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Chat us on WhatsApp</h2>
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">24x7 WhatsApp chat Support</p>
+                <p class="mt-2 text-sm text-blue-500 dark:text-blue-400"><a href="https://wa.me/+918269795023?text=Hello">Start WhatsApp Chating</a></p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
+                <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+  <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+</svg>
+                </span>
+                
+                <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Call us now</h2>
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">We’re here to help you.<br>
+                Monday to Saturday - 10:00AM to 04:30PM<br>
+                <span class="text-red-500">Sunday Holiday</span></p>
+                <p class="mt-2 text-sm text-blue-500 dark:text-blue-400"><a href="tel:+918269795023">Start Calling</a></p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
+                <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+                      <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                      <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg>
+                </span>
+                
+                <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Chat with us</h2>
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">24x7 WhatsApp chat Support</p>
+                <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">Chat Now</p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-blue-50 md:p-6 dark:bg-gray-800">
+                <span class="inline-block p-3 text-blue-500 rounded-lg bg-blue-100/80 dark:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                </span>
+                
+                <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Visit us at Patali Hanuman, Infront pushp vatika, Morar</h2>
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Monday to Saturday - 10:00AM to 04:30PM<br>
+                <span class="text-red-500">Sunday Holiday</span></p>
+                <p class="mt-2 text-sm text-blue-500 dark:text-blue-400"><a target="_blank"  href="https://maps.app.goo.gl/pLkZA5uQmSJSSyBF8">Visit Now</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- registration -->
+<section id="registration">
+    <div class="container mx-auto px-6">
+      <div class="w-full mx-auto py-24">
+        
+
+          <div class="w-full mx-auto mb-8">
+            <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-gray-900">Register with <span class="text-blue-500">EME</span></h1>
+            
+            <p class="max-w-2xl mx-auto mt-1 text-center text-gray-500 dark:text-gray-500">
+              Now you are registering yourself at Easy Math Education.
+            </p>
+          </div>
+          
+        <form id="registrationFormData" action="" method="POST" accept-charset="utf-8">
+          <div class="w-full mx-auto mb-10 flex flex-wrap">
+            <h2 class="text-blue-500 w-full text-2xl font-semibold mb-4">Personal Information</h2>
+            <div class="mb-4 w-full">
+              <label class="block text-gray-700 text-sm font-bold" for="student_name">Student Name:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="student_name" type="text" placeholder="Full name" name="Student name">
+            </div>
+
+            <div class="mb-4 w-1/2 pr-1">
+              <label class="block text-gray-700 text-sm font-bold" for="father_name">Father Name:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="father_name" type="text" placeholder="Father's full name" name="Father name">
+            </div>
+
+            <div class="mb-4 w-1/2 pl-1">
+              <label class="block text-gray-700 text-sm font-bold" for="mother_name">Mother Name:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="mother_name" type="text" placeholder="Mother's full name" name="Mother name">
+            </div>
+
+            <div class="mb-4 w-1/2 pr-1">
+              <label class="block text-gray-700 text-sm font-bold" for="date_of_birth">Date of birth:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="date_of_birth" type="date" name="Dob">
+            </div>
+
+            <div class="mb-4 w-1/2 pl-1">
+              <label class="block text-gray-700 text-sm font-bold" for="gender">Gender:</label>
+              <select class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="gender" name="Gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="w-full mx-auto mb-10 flex flex-wrap">
+            <h2 class="text-blue-500 w-full text-2xl font-semibold mb-4">Contact information</h2>
+            <div class="mb-4 w-1/2 pr-1">
+              <label class="block text-gray-700 text-sm font-bold" for="student_mobile">Mobile number:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="student_mobile" type="tel" placeholder="Mobile number" name="Mobile">
+            </div>
+
+            <div class="mb-4 w-1/2 pl-1">
+              <label class="block text-gray-700 text-sm font-bold" for="father_mobile">Father's Mobile number:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="father_mobile" type="tel" placeholder="Father's mobile number" name="Father mobile">
+            </div>
+
+            <div class="mb-4 w-1/2 pr-1">
+              <label class="block text-gray-700 text-sm font-bold" for="blood_group">Blood group:</label>
+              <select class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="blood_group" name="Blood group">
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="O+">O+</option>
+                <option value="AB+">AB+</option>
+                <option value="A-">A-</option>
+                <option value="B-">B-</option>
+                <option value="O-">O-</option>
+                <option value="AB-">AB-</option>
+              </select>
+            </div>
+
+            <div class="mb-4 w-1/2 pl-1">
+              <label class="block text-gray-700 text-sm font-bold" for="category">Category:</label>
+              <select class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="category" name="Category">
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                <option value="OBC">OBC</option>
+                <option value="General">General</option>
+              </select>
+            </div>
+
+            <div class="mb-4 w-full">
+              <label class="block text-gray-700 text-sm font-bold" for="permanent_add">Permanent Address:</label>
+              <textarea class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500 " id="permanent_add" placeholder="Permanent address"  name="Permanent add"></textarea>
+            </div>
+
+            <div class="mb-4 w-full">
+              <label class="block text-gray-700 text-sm font-bold" for="current_add">Current Address:</label>
+              <textarea class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="current_add" placeholder="Current address"  name="Current add"></textarea>
+            </div>
+
+            <div class="mb-4 w-1/2 pr-1">
+              <label class="block text-gray-700 text-sm font-bold" for="area_pincode">Area pincode:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="area_pincode" type="tel" placeholder="Area pincode"  name="Area pincode">
+            </div>
+
+
+            <div class="mb-4 w-1/2 pl-1">
+              <label class="block text-gray-700 text-sm font-bold" for="aadhaar">Aadhaar Number:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="aadhaar" type="tel" placeholder="XXXX XXXX XXXX"  name="Aadhaar number">
+            </div>
+
+          </div>
+
+          <div class="w-full mx-auto mb-10 flex flex-wrap">
+            <h2 class="text-blue-500 w-full text-2xl font-semibold mb-4">Educational information</h2>
+            <div class="mb-4 w-full">
+              <label class="block text-gray-700 text-sm font-bold" for="qualification">Qualification:</label>
+              <input required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="qualification" type="text" placeholder="Qualification Name"  name="Qualification name">
+            </div>
+            
+            <div class="mb-4 w-1/2 pr-1">
+              <label class="block text-gray-700 text-sm font-bold" for="type">Qualification type:</label>
+              <select class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="qualification_type"  name="Qualification type">
+                <option value="School">School</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Post Graduate">Post Graduate</option>
+              </select>
+            </div>
+            
+            <div class="mb-4 w-1/2 pl-1">
+              <label class="block text-gray-700 text-sm font-bold" for="semester">Semester Year:</label>
+              <select class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="semester_year"  name="Semester">
+                <option value="1st">1st Year</option>
+                <option value="2nd">2nd Year</option>
+                <option value="3rd">3rd Year</option>
+                <option value="4th">4th Year</option>
+              </select>
+            </div>
+
+            <div class="mb-4 w-1/2 pr-1">
+              <label class="block text-gray-700 text-sm font-bold" for="course">Applied Course for:</label>
+              <select required class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="course"  name="Course">
+                <option value="SSC">SSC</option>
+                <option value="Railway">Railway</option>
+                <option value="Vyapam">Vyapam</option>
+              </select>
+            </div>
+
+            <div class="mb-4 w-1/2 pl-1">
+              <label class="block text-gray-700 text-sm font-bold" for="medium">Medium:</label>
+              <select class="border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" id="medium"  name="Medium">
+                <option value="हिंदी">हिंदी</option>
+                <option value="English">English</option>
+              </select>
+            </div>
+
+          </div>
+          
+          <div class="w-full mx-auto">
+              <button class="flex items-center justify-between w-full px-6 py-3 text-lg tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50" type="submit">
+                <span>Register</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 rtl:-scale-x-100" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd"
+         d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+         clip-rule="evenodd" />
+         </svg>
+              </button>
+            </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+<section class="">
+  <div class="container mx-auto px-6 py-10">
+    <div class="w-full mx-auto p-3 bg-gray-300 rounded-lg">
+      
+      <iframe class="w-full mx-auto aspect-video rounded   " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d570.8285243651198!2d78.22786391499713!3d26.22488903266367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976c166fa14730f%3A0x9a44fc73f1924ba5!2sPUSHP%20vatika%20marriage%20hall!5e1!3m2!1sen!2sin!4v1698398898610!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="bg-gray-50/60 dark:bg-stone-900 ">
+    <div class="container px-6 py-8 mx-auto">
+        <div class="flex flex-col items-center text-center">
+            <a href="#" class="flex flex-wrap dark:text-gray-100">
+            <img class="w-10 rounded-full my-auto" src="assets/img/logo_1.png" alt="">
+            <span class="text-3xl font-bold ml-5 my-auto">Easy Math Education</span>
+          </a>
+
+            <div class="flex flex-wrap justify-center mt-6 -mx-4">
+                <a href="/" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"> Home </a>
+                
+                <a href="pages/about.html" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"> About </a>
+                
+                <a href="pages/about.html" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"> Teams </a>
+
+                <a href="pages/privacy.html" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"> Privacy </a>
+
+                <a href="pages/cookie.html" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"> Cookies </a>
+            </div>
+
+        </div>
+
+        <hr class="my-6 border-gray-300 md:my-10 dark:border-gray-700" />
+
+        <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+            <p class="text-sm text-gray-500 dark:text-gray-300">© Copyright 2023. All Rights Reserved.</p>
+
+            <div class="flex -mx-2">
+              
+              <p class="text-sm text-gray-500 dark:text-gray-300 mt-2"><a target="_blank" href="https://rurendrategor.web.app/">Designed & Developed by <span class="text-blue-500">Rurendra Tegor</span></a></p>
+              
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- scripts -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="assets/js/script.js">
+</script>
+<script>
+window.addEventListener("load", function() {
+  var image = new Image();
+  image.src = document.querySelector("#preloader img").src;
+  image.onload = function() {
+    document.getElementById("preloader").style.display = "none";
+    document.getElementById("content").style.display = "block";
+  };
+  image.onerror = function() {
+    // Handle errors if the image fails to load, e.g., display a placeholder or an error message.
+    console.error("Image failed to load");
+  };
+});
+
+</script>
+
+
+</body>
+</html>
+
+
