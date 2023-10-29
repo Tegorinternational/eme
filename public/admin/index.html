@@ -1,56 +1,235 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>User Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="dist/main.css">
+    <style>
+      @media print {
+      .print-none {
+        display:none !important;
+      }
+      .print-block {
+        display: block !important;
+      }
+    }
+    </style>
 </head>
 <body>
-  <h1>Welcome to Your Dashboard</h1>
-  <p id="userEmail"></p>
-  <button id="logoutBtn">Logout</button>
+  
+  
+    <header class="print-none fixed top-0 w-full">
+      <div class="container mx-auto px-6 flex flex-wrap py-3 shadow">
+        <p class="text-left online-block text-4xl text-black font-bold my-auto">EME</p>
+        <div id="user-data" class="ml-auto my-auto flex">
+        <!-- User data will be displayed here -->
+        </div>
+        <button class="text-center ml-3 px-5 py-1 bg-yellow-400 yext-black rounded my-auto"  id="logout">Logout</button>
+      </div>
+    </header>
+    
+      <div class="container mx-auto px-6 py-5 print-none pt-32">
+    
+    <h1 class="text-xl mb-1 font-bold uppercase text-center">Eme compitition coaching classes</h1>
+    <p class="text-sm mb-4 font-medium uppercase text-center">Admission Form data</p>
+     <div class="border border-black border-dashed rounded-lg p-5">
+      <table style="border-collapse: collapse"  class="text-left w-full mx-auto">
+      <thead>
+        <tr class="text-sm">
+          <th class="border border-black pl-1 pr-3 py-1">SR.</th>
+          <th class="border border-black pl-1 pr-3 py-1">Student name</th>
+          <th class="border border-black pl-1 pr-3 py-1">Admission Date</th>
+        </tr>
+      </thead>
+      <tbody class="" id="studentListVisible">
+         <!-- data will appear here -->
+      </tbody>
+    </table>
+    </div>
+  </div>
+  
+  
+    <div class="hidden print-block" id="studentList">
+      <!-- data will appear here -->
+    </div>
+    
+    <div class="print-none w-20 h-20 bg-blue-300 rounded-full fixed bottom-5 right-5 z-40"><button class="w-full h-full mx-auto" onclick="window.print()">Print</button>
+    </div>
 
 
+<footer class="bg-gray-200 dark:bg-stone-900 fixed bottom-0 w-full z-30 print-none">
+    <div class="container px-6 py-8 mx-auto">
+        <div class="flex flex-col items-center text-center">
+            <a href="#" class="flex flex-wrap dark:text-gray-100">
+            <span class="text-3xl font-bold ml-5 my-auto">Easy Math Education</span>
+          </a>
 
+        </div>
 
+        <hr class="my-6 border-gray-300 md:my-10 dark:border-gray-700" />
 
+        <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+            <p class="text-sm text-gray-500 dark:text-gray-300">© Copyright 2023. All Rights Reserved.</p>
 
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+            <div class="flex -mx-2">
+              
+              <p class="text-sm text-gray-500 dark:text-gray-300 mt-2"><a target="_blank" href="https://rurendrategor.web.app/">Designed & Developed by <span class="text-blue-500">Rurendra Tegor</span></a></p>
+              
+            </div>
+        </div>
+    </div>
+</footer>
 
+    <script>
+        // Initialize Firebase with your project's configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDALQzmEymTCsfa-JdJLBx5NjBkNyorGh8",
+              authDomain: "easy-math-education.firebaseapp.com",
+              projectId: "easy-math-education",
+              storageBucket: "easy-math-education.appspot.com",
+              messagingSenderId: "1008284631099",
+              appId: "1:1008284631099:web:c0ee138cef80a90c915c1e",
+              measurementId: "G-D7LR8M1ZBY"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
 
-  <script>
-    const firebaseConfig = {
-   apiKey: "AIzaSyDALQzmEymTCsfa-JdJLBx5NjBkNyorGh8",
-     authDomain: "easy-math-education.firebaseapp.com",
-     projectId: "easy-math-education",
-     storageBucket: "easy-math-education.appspot.com",
-     messagingSenderId: "1008284631099",
-     appId: "1:1008284631099:web:c0ee138cef80a90c915c1e",
-     measurementId: "G-D7LR8M1ZBY"
-    };
+        const userElement = document.getElementById('user-data');
+        const logoutButton = document.getElementById('logout');
 
-    firebase.initializeApp(firebaseConfig);
-
-    // Check if the user is authenticated
-    firebase.auth().onAuthStateChanged((user) => {
-      const userEmail = document.getElementById('userEmail');
-      const logoutBtn = document.getElementById('logoutBtn');
-
-      if (user) {
-        userEmail.textContent = `Welcome, ${user.email}!`;
-        
-        logoutBtn.addEventListener('click', () => {
-          firebase.auth().signOut().then(() => {
-            // Redirect to the login page upon logout
-            window.location.href = 'login.html';
-          }).catch((error) => {
-            console.error(error.message);
-          });
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                // User is signed in.
+                userElement.innerHTML = `<p class="my-auto">${user.email}</p>`;
+                // You can display more user data here.
+            } else {
+                // No user is signed in. Redirect to the login page.
+                window.location.replace("login.html");
+            }
         });
-      } else {
-        // User is not signed in, redirect to login page
-        window.location.href = 'login.html';
-      }
+
+        logoutButton.addEventListener('click', () => {
+            firebase.auth().signOut().then(() => {
+                // Redirect to the login page or any other appropriate action
+            }).catch(error => {
+                console.error(error);
+            });
+        });
+        
+        
+        
+        
+        const studentListVisible = document.getElementById('studentListVisible');
+const studentList = document.getElementById('studentList');
+
+
+
+
+
+db.collection('registrationForm').get().then((querySnapshot) => {
+    let serialN = 1;
+    querySnapshot.forEach((doc) => {
+        const studentDataVisible = doc.data(); // Assuming studentDataVisible is available
+        const studentData = doc.data();
+        // Create a new div element for studentListVisible
+        const datatimestamp = studentData.timestamp.toDate();
+        const formatedtime = datatimestamp.toLocaleString();
+        
+        
+        const studentInfoDivVisible = document.createElement('tr');
+
+        // Set the inner HTML for the new div with the studentDataVisible
+        studentInfoDivVisible.innerHTML = `
+            <td class="border border-black pl-1 pr-3 py-1 text-sm">${serialN}.</td>
+            <td class="border border-black pl-1 pr-3 py-1 text-blue-600 font-medium">${studentDataVisible.studentName}</td>
+            <td class="border border-black pl-1 pr-3 py-1 text-xs">${formatedtime}</td>
+        `;
+
+        // Append the new div to studentListVisible
+        studentListVisible.appendChild(studentInfoDivVisible);
+        serialN++;
+
+
+
+
+        // Create a new div element for studentList
+        const studentInfoDiv = document.createElement('section');
+
+        // Set the inner HTML for the new div with the studentData
+        studentInfoDiv.innerHTML = `
+              <div style="z-index: 5;" class="mx-auto p-2 px-6 border-dashed border-2 border-black">
+              
+              <img style="opacity:0.05; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="w-4/5 grayscale print-none" src="/public/assets/img/logo_1.png">
+              
+                <h1 class="uppercase text-3xl font-bold text-center mx-auto w-full traking-wide">Eme compitition coaching classes</h1>
+            
+                <div class="w-full mx-auto flex flex-row px-1">
+                  <p class="text-left">Date of Admission: <span class="underline decoration-dotted underline-offset-4 nowra">${formatedtime}</span></p>
+                  <p class="ml-auto">Mobile no. +91 826 979 5023</p>
+                </div>
+            
+                <div class="w-full mx-auto flex flex-col">
+            
+                  <div class="pt-8 flex flex-wrap">
+                    <div class="w-1/2 my-auto">
+                      <h1 class="text-2xl text-black font-bold my-3 w-full underline">Personal information</h1>
+                      <p class="text-lg font-bold text-black">Student name: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.studentName}</span></p>
+                      <p class="text-lg font-bold text-black">Father's name: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.fatherName}</span></p>
+                      <p class="text-lg font-bold text-black">Mother's name: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.motherName}</span></p>
+                      <p class="text-lg font-bold text-black">Date of birth: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.dob}</span></p>
+                      <p class="text-lg font-bold text-black">Gender: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.gender}</span></p>
+                    </div>
+                    <div class="w-1/2 my-auto">
+                      <img class="w-32 border-2 border-black ml-auto" src="profile.jpg" alt="profile" />
+                    </div>
+                  </div>
+            
+            
+                  <div class="pt-8">
+                    <h1 class="text-2xl text-black font-bold my-3 underline">Educational information</h1>
+                    <p class="text-lg font-bold text-black">Qualification: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.qualification}</span></p>
+                    <p class="text-lg font-bold text-black">Qualification type: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.qualificationType}</span></p>
+                    <p class="text-lg font-bold text-black">Semester year: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.semesterYear}</span></p>
+                    <p class="text-lg font-bold text-black">Applied course for: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.appliedCourse}</span></p>
+                    <p class="text-lg font-bold text-black">Medium: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.medium}</span></p>
+                    <p class="text-lg font-bold text-black">Registration Fee: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+                  </div>
+            
+            
+                  <div class="pt-6">
+                    <h1 class="text-2xl text-black font-bold my-3 underline">Contact information</h1>
+                    <p class="text-lg font-bold text-black">Mobile number: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">+91 ${studentData.studentMobile}</span></p>
+                    <p class="text-lg font-bold text-black">Father's mobile number: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">+91 ${studentData.fatherMobile}</span></p>
+                    <p class="text-lg font-bold text-black">Blood group: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.bloodGroup}</span></p>
+                    <p class="text-lg font-bold text-black">Category: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.category}</span></p>
+                    <p class="text-lg font-bold text-black h-14">Current address: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.currentAdd}</span></p>
+                    <p class="text-lg font-bold text-black h-14">Permanent address: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.permanentAdd}</span></p>
+                    <p class="text-lg font-bold text-black">Area pincode: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.areaPincode}</span></p>
+                    <p class="text-lg font-bold text-black">Aadhaar number: <span class="underline decoration-dotted underline-offset-4 ml-3 font-medium">${studentData.aadhaar}</span></p>
+                  </div>
+            
+                  <div class="w-full mx-auto flex flex-row pt-16 pb-5 px-10">
+                    <span class="text-left">Student Signature </span>
+                    <span class="ml-auto">Coordinator Signature </span>
+                  </div>
+            
+                </div>
+              </div>
+              
+        `;
+
+        // Append the new div to studentList
+        studentList.appendChild(studentInfoDiv);
     });
-  </script>
+}).catch((error) => {
+    console.error('Error getting student data: ', error);
+});
+
+    </script>
 </body>
 </html>
